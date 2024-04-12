@@ -1,8 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import "dotenv/config";
 const app = express();
-mongoose.connect("mongodb+srv://dummyUser:40WCZdsp2xJUTVmI@cluster0.ccflqch.mongodb.net/dashboard");
+mongoose.connect(process.env.URL);
 app.use(cors())
 const schema = new mongoose.Schema({
   end_year: String,
